@@ -1,0 +1,142 @@
+/* ==== Base & Layout ==== */
+:root {
+  --bg: #0b1020;
+  --card: #121934;
+  --text: #e6e9f5;
+  --muted: #a7b0d6;
+  --primary: #4f7cff;
+  --primary-strong: #3c66e6;
+  --ring: 0 0 0 3px rgba(79, 124, 255, 0.35);
+  --success: #3ac779;
+  --danger: #ff6b6b;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 10% -10%, #1b2450 0%, #0b1020 45%, #090d1a 100%), var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* ==== Card ==== */
+.container {
+  width: min(680px, 92vw);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+}
+
+/* ==== Typography ==== */
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.6vw, 28px);
+  letter-spacing: 0.3px;
+}
+
+.container > p:last-of-type {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ==== Form ==== */
+#text-input {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: #0e1530;
+  color: var(--text);
+  outline: none;
+  transition: box-shadow .2s ease, border-color .2s ease, transform .06s ease;
+}
+
+#text-input::placeholder {
+  color: #8891bd;
+}
+
+#text-input:focus-visible {
+  border-color: var(--primary);
+  box-shadow: var(--ring);
+  transform: translateY(-1px);
+}
+
+#check-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 0;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-strong) 100%);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: transform .06s ease, filter .15s ease, box-shadow .15s ease;
+  box-shadow: 0 8px 18px rgba(79,124,255,0.3);
+}
+
+#check-btn:hover { filter: brightness(1.05); }
+#check-btn:active { transform: translateY(1px); }
+#check-btn:focus-visible { box-shadow: var(--ring), 0 8px 18px rgba(79,124,255,0.3); }
+
+/* ==== Result ==== */
+#result {
+  min-height: 24px;            /* để layout không nhảy */
+  margin-top: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Nếu muốn màu theo nội dung, bạn có thể tự thêm class "ok"/"not" từ JS:
+#result.ok  { border-color: rgba(58,199,121,.5); background: rgba(58,199,121,.12); color: var(--success); }
+#result.not { border-color: rgba(255,107,107,.45); background: rgba(255,107,107,.12); color: var(--danger); }
+*/
+
+/* ==== Small enhancements ==== */
+.container {
+  display: grid;
+  gap: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #check-btn, #text-input { transition: all .2s ease; }
+}
+
+/* ==== Light mode (tự động theo hệ thống) ==== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f3f5fb;
+    --card: #ffffff;
+    --text: #0f162a;
+    --muted: #5b6785;
+    --primary: #2b6ef5;
+    --primary-strong: #1f5ee0;
+    --ring: 0 0 0 3px rgba(43, 110, 245, 0.28);
+    --shadow: 0 10px 28px rgba(16, 29, 59, .08);
+  }
+  body {
+    background: radial-gradient(1100px 700px at 10% -10%, #e9eefc 0%, #f3f5fb 50%, #eef1f8 100%), var(--bg);
+  }
+  #text-input { background: #ffffff; border-color: #dde3f1; }
+  #result { background: #f6f8ff; border-color: #e5ebfb; }
+}
