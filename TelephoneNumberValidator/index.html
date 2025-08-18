@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>US Telephone Number Validator</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+     <h1>US Telephone Number Validator</h1>
+     <form id="validator-form" autocomplete="off">
+         <label for="user-input" class="visually-hidden">Enter US phone number</label>
+        <input
+            id="user-input"
+            type="text"
+            placeholder="e.g. 1 555-555-5555"
+            inputmode="numeric"
+            aria-describedby="helper"
+        />    
+        <div id="helper" class="helper">
+        Support for valid formats: <code>1 555-555-5555</code>, <code>1 (555) 555-5555</code>,
+        <code>1(555)555-5555</code>, <code>1 555 555 5555</code>, <code>5555555555</code>,
+        <code>555-555-5555</code>, <code>(555)555-5555</code>
+      </div>
+        <div class="actions">
+            <button id="check-btn" type="submit">Validate</button>
+            <button id="clear-btn" type="button" class="ghost">Clear</button>
+        </div>
+     </form>
+     <div id="results-div" role="status" aria-live="polite"></div>
+    <script src="./script.js"></script>
+
+</body>
+</html>

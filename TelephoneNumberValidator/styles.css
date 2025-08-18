@@ -1,0 +1,112 @@
+:root {
+  --bg: #0b1220;
+  --card: #121a2b;
+  --text: #e8eefc;
+  --muted: #aab3c5;
+  --ok: #2ecc71;
+  --bad: #e74c3c;
+  --brand: #7aa2ff;
+  --border: #1d2740;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(1000px 500px at 10% -20%, #1b2551 0%, transparent 60%),
+              radial-gradient(1200px 500px at 100% 0%, #1b2551 0%, transparent 60%),
+              var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.5;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 40px auto 12px;
+  padding: 0 16px;
+  font-size: 28px;
+}
+
+#validator-form {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  display: grid;
+  gap: 12px;
+}
+
+#user-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0f1626;
+  color: var(--text);
+  outline: none;
+  font-size: 16px;
+}
+#user-input::placeholder { color: #7182a6; }
+
+.helper {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, opacity .2s ease, background .2s ease;
+}
+
+#check-btn { background: var(--brand); color: #0b1020; }
+#check-btn:active { transform: translateY(1px); }
+
+.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.ghost:active { transform: translateY(1px); }
+
+#results-div {
+  max-width: 760px;
+  margin: 12px auto 0;
+  padding: 12px 14px;
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0f1626;
+  font-weight: 600;
+  letter-spacing: .2px;
+  white-space: pre-wrap;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  h1 { font-size: 22px; margin-top: 24px; }
+  #validator-form { padding: 12px; }
+  #user-input { font-size: 15px; padding: 12px 14px; }
+  button { width: 100%; }
+  #results-div { font-size: 15px; }
+}
