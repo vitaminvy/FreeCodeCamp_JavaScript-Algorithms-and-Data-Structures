@@ -109,6 +109,21 @@ function calculateRating (watchList){
 console.log(calculateRating(watchList)); // Output: 8.675
 
 
+ 
+// Expected results:
+var arr = [
+    ['name', 'Sơn Đặng'],
+    ['age', 18],
+];
+
+function arrToObj(arr) {
+  return arr.reduce((result, element) => {
+    result[element[0]] = element[1]; // gán key-value vào object
+    return result;
+  }, {}); // initial value là {}
+}
+console.log(arrToObj(arr)); // { name: 'Sơn Đặng', age: 18 }
+
 
 
 
