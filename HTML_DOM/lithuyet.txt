@@ -1,0 +1,15 @@
+/*  trình duyệt nhận được chuỗi html => dịch chuỗi html ra mô hình DOM
+Dom(Document Object Model) có 3 thành phần: 
+- Element: ID, class, tag, CSS selector, HTML collection
+- Attribute
+- Text
+
+//Node: mỗi thẻ,attribute, text là một node trong html
+-------------------------------------------------
+Javascript: Browser | Server(Nodejs)
+Browser: HTML,CSS-> DOM->WEB API (bao gồm DOM API và nhiều API khác)
+
+
+//Document object : 
+- Trình duyệt đọc toàn bộ html -> document object model -> lưu vào Document
+
