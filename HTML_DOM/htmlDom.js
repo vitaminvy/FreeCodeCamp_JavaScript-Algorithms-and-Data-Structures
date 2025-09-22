@@ -58,3 +58,27 @@ console.log(headingNode);
 // lấy tất cả
 var headingNode = document.querySelector(".box .heading-2");
 console.log(headingNode);
+
+
+// Lấy thẻ li ở box-1
+// Cách 1
+var listItemNodes = document.querySelectorAll(".box-1 li");
+console.log(listItemNodes);
+
+// Cách 2
+//Task 1: sử dụng boxNode
+var boxNode = document.querySelectorAll(".box-1")[0];
+console.log(boxNode);
+
+//Task 2: Sử dụng các li elements là con của `box-1`
+console.log(boxNode.querySelectorAll("li"));
+
+
+console.log(document.forms)
+//HTMLCollection(2) [form#form-1, 
+// form#form-2, form-1: form#form-1, form-2: form#form-2]
+
+// Lấy form đầu tiên
+console.log(document.forms[0]);
+console.log(document.forms['form-1']);
+
